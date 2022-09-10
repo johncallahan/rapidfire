@@ -7,7 +7,12 @@ module Rapidfire
     end
 
     def new
-      @attempt_builder = AttemptBuilder.new(attempt_params)
+      @attempt = @survey.attempts.find_by_user_id(current_user.id)
+      if @attempt
+        redirect_to root_path
+      else
+        @attempt_builder = AttemptBuilder.new(attempt_params)
+      end
     end
 
     def create

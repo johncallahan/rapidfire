@@ -20,7 +20,8 @@ module Rapidfire
     attr_accessor :survey, :question, :default_text, :placeholder,
       :type, :question_text, :position, :answer_options, :answer_presence,
       :answer_minimum_length, :answer_maximum_length,
-      :answer_greater_than_or_equal_to, :answer_less_than_or_equal_to
+      :answer_greater_than_or_equal_to, :answer_less_than_or_equal_to,
+      :answer_is_equal_to
 
     delegate :valid?, :errors, :to => :question
 
@@ -64,7 +65,8 @@ module Rapidfire
           :minimum  => answer_minimum_length,
           :maximum  => answer_maximum_length,
           :greater_than_or_equal_to => answer_greater_than_or_equal_to,
-          :less_than_or_equal_to    => answer_less_than_or_equal_to
+          :less_than_or_equal_to    => answer_less_than_or_equal_to,
+          :correct_answer => answer_is_equal_to
         }
       }
     end
@@ -82,6 +84,7 @@ module Rapidfire
       self.answer_maximum_length = question.rules[:maximum]
       self.answer_greater_than_or_equal_to = question.rules[:greater_than_or_equal_to]
       self.answer_less_than_or_equal_to    = question.rules[:less_than_or_equal_to]
+      self.answer_is_equal_to = question.rules[:is_equal_to]
     end
   end
 end

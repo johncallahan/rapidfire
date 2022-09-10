@@ -26,7 +26,8 @@ module Rapidfire
     # will inturn add validations on answer on the fly!
     def validate_answer(answer)
       if rules[:presence] == "1"
-        answer.validates_presence_of :answer_text
+        answer.validates_presence_of :answer_text,
+          :message => ">>> You must provide an answer to this question"
       end
 
       if rules[:minimum].present? || rules[:maximum].present?
@@ -34,6 +35,12 @@ module Rapidfire
         min_max[:maximum] = rules[:maximum].to_i if rules[:maximum].present?
 
         answer.validates_length_of :answer_text, min_max
+      end
+
+      if rules[:correct_answer]
+        answer.validates_inclusion_of :answer_text,
+          :in => [ rules[:correct_answer] ],
+          :message => ">>>Your answer '#{answer.answer_text}' is incorrect"
       end
     end
   end
