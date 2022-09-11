@@ -6,7 +6,7 @@ module Rapidfire
       @surveys = if defined?(Kaminari)
         Survey.page(params[:page])
       else
-        Survey.all
+        Survey.all.order("created_at ASC")
       end
     end
 
