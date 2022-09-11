@@ -4,6 +4,8 @@ module Rapidfire
     has_many  :questions
     has_many :attempts
 
+    has_rich_text :introduction
+
     validates :name, :presence => true
   end
 end
