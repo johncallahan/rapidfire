@@ -84,7 +84,7 @@ module Rapidfire
       self.answer_maximum_length = question.rules[:maximum]
       self.answer_greater_than_or_equal_to = question.rules[:greater_than_or_equal_to]
       self.answer_less_than_or_equal_to    = question.rules[:less_than_or_equal_to]
-      self.answer_is_equal_to = question.rules[:is_equal_to]
+      self.answer_is_equal_to = question.rules[:correct_answer]
     end
   end
 end
