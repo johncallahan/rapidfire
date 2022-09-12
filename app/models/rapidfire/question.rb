@@ -37,7 +37,7 @@ module Rapidfire
         answer.validates_length_of :answer_text, min_max
       end
 
-      if rules[:correct_answer]
+      if rules[:correct_answer] && rules[:correct_answer].length > 0
         answer.validates_inclusion_of :answer_text,
           :in => [ rules[:correct_answer] ],
           :message => ">>>Your answer '#{answer.answer_text}' is incorrect"
