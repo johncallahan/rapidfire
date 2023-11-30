@@ -9,6 +9,7 @@ module Rapidfire
     
     amoeba do
       enable
+      prepend :name => "Copy of "
       include_association :questions
     end
   end
