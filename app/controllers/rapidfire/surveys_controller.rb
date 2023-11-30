@@ -74,7 +74,7 @@ module Rapidfire
       original_survey = Survey.find(params[:id])
       cloned_survey = original_survey.amoeba_dup
       cloned_survey.save
-      redirect_to cloned_survey
+      redirect_to action: 'index'
     end
 
     private
