@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'pg'
+gem 'amoeba'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
