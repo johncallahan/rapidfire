@@ -69,6 +69,13 @@ module Rapidfire
         format.js
       end
     end
+    
+    def clone
+      original_survey = Survey.find(params[:id])
+      cloned_survey = original_survey.amoeba_dup
+      cloned_survey.save
+      redirect_to cloned_survey
+    end
 
     private
 
