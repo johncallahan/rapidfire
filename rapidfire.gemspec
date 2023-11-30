@@ -4,7 +4,7 @@ require 'rapidfire/version'
 
 Gem::Specification.new do |s|
   s.name        = 'rapidfire'
-  s.version     = '4.0.8'
+  s.version     = '4.0.9'
   s.authors     = ['Yuva Kumar']
   s.email       = ['yuva@codemancers.com']
   s.homepage    = 'https://github.com/code-mancers/rapidfire'
