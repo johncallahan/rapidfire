@@ -11,6 +11,9 @@ module Rapidfire
       enable
       prepend :name => "Copy of "
       include_association :questions
+      customize(lambda {|original,new_object|
+        new_object.introduction = original.introduction.dup
+      })
     end
   end
 end
